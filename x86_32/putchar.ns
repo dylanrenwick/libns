@@ -1,0 +1,7 @@
+putchar(c: int): int {
+	#asm "mov %ax, 0x0" // Zero out eax
+	#asm "mov ah, 0x0e" // Set tty mode
+	#asm "mov al, -<c"  // Set char to print
+	#asm "int 0x10"     // Interrupt
+    return c;
+}
